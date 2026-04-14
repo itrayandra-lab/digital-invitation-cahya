@@ -8,23 +8,32 @@ $wishes = array_reverse(getWishes());
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grand Opening – Apotek Parahyangan Suite</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ── ARENA UNO FONT FACE ── */
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Regular.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Regular.woff') format('woff'); font-weight:400; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Italic.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Italic.woff') format('woff'); font-weight:400; font-style:italic; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Light.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Light.woff') format('woff'); font-weight:300; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Medium.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Medium.woff') format('woff'); font-weight:500; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Bold.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Bold.woff') format('woff'); font-weight:700; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Heavy.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Heavy.woff') format('woff'); font-weight:900; font-style:normal; font-display:swap; }
+        @font-face { font-family:'Arena Uno'; src:url('Web-Fonts/ArenaUno-Thin.woff2') format('woff2'),url('Web-Fonts/ArenaUno-Thin.woff') format('woff'); font-weight:100; font-style:normal; font-display:swap; }
+    </style>
     <style>
         :root {
-            --primary: #FF8DA1;
-            --primary-dark: #e8708a;
-            --primary-light: #ffe0e7;
-            --primary-pale: #fff5f7;
+            --primary: #A64786;
+            --primary-dark: #8a3870;
+            --primary-light: #f0d4e8;
+            --primary-pale: #fdf4fa;
             --gold: #c9a96e;
-            --dark: #3a2a2e;
-            --text: #5a4a4e;
+            --dark: #2a1a2e;
+            --text: #4a3a4e;
             --white: #ffffff;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arena Uno', sans-serif;
             background: var(--primary-pale);
             color: var(--text);
             overflow-x: hidden;
@@ -33,7 +42,7 @@ $wishes = array_reverse(getWishes());
         /* ── HERO ── */
         .hero {
             min-height: 100vh;
-            background: linear-gradient(160deg, #fff0f3 0%, #ffe4ec 40%, #ffd6e4 100%);
+            background: linear-gradient(160deg, #fdf4fa 0%, #f5e0f0 40%, #edd0e8 100%);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -49,7 +58,7 @@ $wishes = array_reverse(getWishes());
             position: absolute;
             top: -80px; right: -80px;
             width: 400px; height: 400px;
-            background: radial-gradient(circle, rgba(255,141,161,0.25) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(166,71,134,0.18) 0%, transparent 70%);
             border-radius: 50%;
         }
 
@@ -58,14 +67,14 @@ $wishes = array_reverse(getWishes());
             position: absolute;
             bottom: -100px; left: -80px;
             width: 500px; height: 500px;
-            background: radial-gradient(circle, rgba(255,141,161,0.18) 0%, transparent 70%);
+            background: radial-gradient(circle, rgba(166,71,134,0.12) 0%, transparent 70%);
             border-radius: 50%;
         }
 
         .petal {
             position: absolute;
             width: 12px; height: 18px;
-            background: rgba(255,141,161,0.35);
+            background: rgba(166,71,134,0.28);
             border-radius: 50% 0 50% 0;
             animation: fall linear infinite;
             pointer-events: none;
@@ -91,8 +100,9 @@ $wishes = array_reverse(getWishes());
         }
 
         .hero-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
             font-size: clamp(2.4rem, 6vw, 4.2rem);
+            font-weight: 900;
             color: var(--dark);
             line-height: 1.15;
             position: relative; z-index: 1;
@@ -104,8 +114,9 @@ $wishes = array_reverse(getWishes());
         }
 
         .hero-subtitle {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
             font-size: clamp(1rem, 2.5vw, 1.4rem);
+            font-weight: 300;
             color: var(--gold);
             letter-spacing: 2px;
             margin: 10px 0 32px;
@@ -143,12 +154,12 @@ $wishes = array_reverse(getWishes());
         .info-card {
             background: rgba(255,255,255,0.75);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,141,161,0.3);
+            border: 1px solid rgba(166,71,134,0.25);
             border-radius: 16px;
             padding: 20px 28px;
             min-width: 180px;
             text-align: center;
-            box-shadow: 0 4px 20px rgba(255,141,161,0.12);
+            box-shadow: 0 4px 20px rgba(166,71,134,0.1);
         }
 
         .info-card .icon { font-size: 1.6rem; margin-bottom: 8px; }
@@ -165,12 +176,12 @@ $wishes = array_reverse(getWishes());
             font-weight: 600;
             letter-spacing: 1px;
             text-decoration: none;
-            box-shadow: 0 6px 24px rgba(255,141,161,0.45);
+            box-shadow: 0 6px 24px rgba(166,71,134,0.4);
             transition: transform 0.2s, box-shadow 0.2s;
             position: relative; z-index: 1;
         }
 
-        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,141,161,0.55); }
+        .cta-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(166,71,134,0.5); }
 
         /* ── SECTIONS ── */
         section { padding: 80px 20px; }
@@ -188,8 +199,9 @@ $wishes = array_reverse(getWishes());
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
             font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 700;
             color: var(--dark);
             text-align: center;
             margin-bottom: 48px;
@@ -214,7 +226,8 @@ $wishes = array_reverse(getWishes());
             padding: 20px 24px;
             font-style: italic;
             color: var(--dark);
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
+            font-weight: 300;
             font-size: 1.05rem;
             text-align: center;
             max-width: 560px;
@@ -227,8 +240,8 @@ $wishes = array_reverse(getWishes());
         .map-wrapper {
             border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 8px 32px rgba(255,141,161,0.2);
-            border: 2px solid rgba(255,141,161,0.25);
+            box-shadow: 0 8px 32px rgba(166,71,134,0.18);
+            border: 2px solid rgba(166,71,134,0.2);
         }
 
         .map-wrapper iframe { display: block; width: 100%; height: 380px; border: none; }
@@ -249,11 +262,11 @@ $wishes = array_reverse(getWishes());
         .wish-section { background: #fff; }
 
         .wish-form {
-            background: linear-gradient(135deg, #fff5f7, #ffe8ee);
-            border: 1px solid rgba(255,141,161,0.3);
+            background: linear-gradient(135deg, #fdf4fa, #f5e0f0);
+            border: 1px solid rgba(166,71,134,0.25);
             border-radius: 24px;
             padding: 40px;
-            box-shadow: 0 8px 32px rgba(255,141,161,0.12);
+            box-shadow: 0 8px 32px rgba(166,71,134,0.1);
             max-width: 600px;
             margin: 0 auto 60px;
         }
@@ -274,9 +287,9 @@ $wishes = array_reverse(getWishes());
         .form-group textarea {
             width: 100%;
             padding: 14px 18px;
-            border: 1.5px solid rgba(255,141,161,0.35);
+            border: 1.5px solid rgba(166,71,134,0.3);
             border-radius: 12px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arena Uno', sans-serif;
             font-size: 0.92rem;
             color: var(--dark);
             background: rgba(255,255,255,0.85);
@@ -288,7 +301,7 @@ $wishes = array_reverse(getWishes());
         .form-group input:focus,
         .form-group textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(255,141,161,0.18);
+            box-shadow: 0 0 0 3px rgba(166,71,134,0.15);
         }
 
         .form-group textarea { height: 110px; }
@@ -300,16 +313,16 @@ $wishes = array_reverse(getWishes());
             color: #fff;
             border: none;
             border-radius: 12px;
-            font-family: 'Poppins', sans-serif;
+            font-family: 'Arena Uno', sans-serif;
             font-size: 0.95rem;
             font-weight: 600;
             cursor: pointer;
             letter-spacing: 1px;
-            box-shadow: 0 6px 20px rgba(255,141,161,0.4);
+            box-shadow: 0 6px 20px rgba(166,71,134,0.35);
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(255,141,161,0.5); }
+        .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 28px rgba(166,71,134,0.45); }
         .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
 
         #form-msg {
@@ -327,8 +340,9 @@ $wishes = array_reverse(getWishes());
         .wish-wall { margin-top: 20px; }
 
         .wish-wall-title {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
             font-size: 1.3rem;
+            font-weight: 700;
             color: var(--dark);
             text-align: center;
             margin-bottom: 28px;
@@ -348,11 +362,11 @@ $wishes = array_reverse(getWishes());
         .wish-list::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
         .wish-card {
-            background: linear-gradient(135deg, #fff5f7, #fff);
-            border: 1px solid rgba(255,141,161,0.25);
+            background: linear-gradient(135deg, #fdf4fa, #fff);
+            border: 1px solid rgba(166,71,134,0.2);
             border-radius: 16px;
             padding: 20px;
-            box-shadow: 0 2px 12px rgba(255,141,161,0.08);
+            box-shadow: 0 2px 12px rgba(166,71,134,0.07);
             animation: fadeUp 0.4s ease;
         }
 
@@ -418,18 +432,18 @@ $wishes = array_reverse(getWishes());
 
         .countdown-box {
             background: rgba(255,255,255,0.8);
-            border: 1px solid rgba(255,141,161,0.3);
+            border: 1px solid rgba(166,71,134,0.25);
             border-radius: 14px;
             padding: 16px 22px;
             text-align: center;
             min-width: 80px;
-            box-shadow: 0 4px 16px rgba(255,141,161,0.1);
+            box-shadow: 0 4px 16px rgba(166,71,134,0.08);
         }
 
         .countdown-box .num {
-            font-family: 'Playfair Display', serif;
+            font-family: 'Arena Uno', serif;
             font-size: 2rem;
-            font-weight: 600;
+            font-weight: 700;
             color: var(--primary);
             line-height: 1;
         }
@@ -442,10 +456,96 @@ $wishes = array_reverse(getWishes());
             margin-top: 4px;
         }
 
+        /* ── DECORATIVE ELEMENTS ── */
+        .deco-ribbon {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            overflow: hidden;
+            line-height: 0;
+            pointer-events: none;
+        }
+
+        .deco-ribbon img {
+            width: 100%;
+            max-width: 860px;
+            height: auto;
+            display: block;
+        }
+
+        .deco-ribbon-top {
+            margin-bottom: -2px;
+        }
+
+        .deco-ribbon-bottom {
+            margin-top: -2px;
+            transform: scaleY(-1);
+        }
+
+        /* Amplop dekoratif di section ucapan */
+        .amplop-deco {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px;
+        }
+
+        .amplop-deco img {
+            width: clamp(120px, 25vw, 200px);
+            height: auto;
+            filter: drop-shadow(0 8px 24px rgba(166,71,134,0.25));
+            animation: floatAnim 4s ease-in-out infinite;
+        }
+
+        @keyframes floatAnim {
+            0%, 100% { transform: translateY(0); }
+            50%       { transform: translateY(-10px); }
+        }
+
+        /* Pita pojok kanan atas hero */
+        .hero-ribbon-corner {
+            position: absolute;
+            top: 0; right: 0;
+            width: clamp(100px, 20vw, 180px);
+            height: auto;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.85;
+        }
+
+        /* Pita pojok kiri bawah hero */
+        .hero-ribbon-corner-left {
+            position: absolute;
+            bottom: 0; left: 0;
+            width: clamp(80px, 16vw, 150px);
+            height: auto;
+            z-index: 2;
+            pointer-events: none;
+            opacity: 0.7;
+            transform: rotate(180deg);
+        }
+
+        /* Separator pita antar section */
+        .section-ribbon-sep {
+            width: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .section-ribbon-sep img {
+            width: clamp(200px, 60vw, 480px);
+            height: auto;
+            opacity: 0.6;
+        }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             .wish-form { padding: 28px 20px; }
             .info-card { min-width: 140px; padding: 16px 18px; }
+            .hero-ribbon-corner { width: 90px; }
+            .hero-ribbon-corner-left { width: 70px; }
         }
     </style>
 </head>
@@ -473,9 +573,14 @@ $wishes = array_reverse(getWishes());
 
 <!-- HERO -->
 <section class="hero">
-    <div class="badge">✦ You're Invited ✦</div>
+    <!-- Pita dekoratif pojok -->
+    <img src="pita.png" alt="" class="hero-ribbon-corner" aria-hidden="true">
+    <img src="pita.png" alt="" class="hero-ribbon-corner-left" aria-hidden="true">
+
+    <img src="LOGO-APOTEK-PARAHYANGAN.png" alt="Logo Apotek Parahyangan Suite" style="width: 200px; height: auto; margin-bottom: 28px; position: relative; z-index: 1; filter: drop-shadow(0 6px 16px rgba(166,71,134,0.25));">
+    <div class="badge">✦ Undangan ✦</div>
     <h1 class="hero-title">Grand Opening<br><span>Apotek Parahyangan Suite</span></h1>
-    <p class="hero-subtitle">— Hadir untuk Kesehatan Anda —</p>
+    <p class="hero-subtitle">— Jadilah Bagian dari Momen Bersejarah Ini —</p>
 
     <div class="divider">
         <span class="divider-icon">❀</span>
@@ -510,17 +615,22 @@ $wishes = array_reverse(getWishes());
     <a href="#ucapan" class="cta-btn">Kirim Ucapan ✦</a>
 </section>
 
+<!-- Ribbon separator -->
+<div class="section-ribbon-sep">
+    <img src="pita.png" alt="" aria-hidden="true">
+</div>
+
 <!-- ABOUT -->
 <section class="about">
     <div class="container">
         <p class="section-label">Tentang Acara</p>
-        <h2 class="section-title">Selamat Datang di Apotek Kami</h2>
+        <h2 class="section-title">Kami Mengundang Kehadiran Anda</h2>
         <p class="about-text">
-            Dengan penuh rasa syukur dan kebahagiaan, kami mengundang Anda untuk hadir dan menjadi bagian dari momen bersejarah ini.
-            Apotek Parahyangan Suite hadir sebagai wujud komitmen kami dalam memberikan pelayanan kesehatan yang terpercaya, profesional, dan penuh kasih untuk masyarakat Kota Bandung.
+            Dengan penuh rasa syukur, kami dengan bangga mengundang Anda untuk hadir dan merayakan bersama kami di hari yang istimewa ini.
+            Apotek Parahyangan Suite resmi hadir sebagai wujud nyata komitmen kami dalam menghadirkan layanan farmasi yang profesional, terpercaya, dan berorientasi pada kepuasan setiap pelanggan di Kota Bandung.
         </p>
         <div class="highlight-box">
-            "Kesehatan adalah investasi terbaik. Kami hadir untuk menemani setiap langkah perjalanan sehat Anda."
+            "Kehadiran Anda adalah kehormatan bagi kami. Mari bersama-sama kita rayakan langkah awal menuju pelayanan kesehatan yang lebih baik."
         </div>
     </div>
 </section>
@@ -529,7 +639,7 @@ $wishes = array_reverse(getWishes());
 <section class="map-section">
     <div class="container">
         <p class="section-label">Lokasi</p>
-        <h2 class="section-title">Temukan Kami di Sini</h2>
+        <h2 class="section-title">Kami Menunggu Anda di Sini</h2>
         <div class="map-wrapper">
             <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.5!2d107.5897!3d-6.8897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7a9b1234567%3A0xabcdef1234567890!2sJl.%20Karang%20Tinggal%20No.2%2C%20Cipedes%2C%20Sukajadi%2C%20Bandung!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid"
@@ -545,11 +655,21 @@ $wishes = array_reverse(getWishes());
     </div>
 </section>
 
+<!-- Ribbon separator -->
+<div class="section-ribbon-sep">
+    <img src="pita.png" alt="" aria-hidden="true">
+</div>
+
 <!-- WISH FORM -->
 <section class="wish-section" id="ucapan">
     <div class="container">
         <p class="section-label">Ucapan & Doa</p>
-        <h2 class="section-title">Sampaikan Ucapan Anda</h2>
+        <h2 class="section-title">Titipkan Doa & Ucapan Terbaik Anda</h2>
+
+        <!-- Amplop dekoratif -->
+        <div class="amplop-deco">
+            <img src="amplop.png" alt="Amplop Ucapan">
+        </div>
 
         <div class="wish-form">
             <form id="wishForm">
@@ -558,20 +678,20 @@ $wishes = array_reverse(getWishes());
                     <input type="text" id="name" name="name" placeholder="Masukkan nama Anda..." maxlength="100" required>
                 </div>
                 <div class="form-group">
-                    <label for="message">Ucapan / Doa</label>
-                    <textarea id="message" name="message" placeholder="Tuliskan ucapan dan doa terbaik Anda..." maxlength="500" required></textarea>
+                    <label for="message">Ucapan</label>
+                    <textarea id="message" name="message" placeholder="Tuliskan ucapan dan doa tulus Anda untuk kami..." maxlength="500" required></textarea>
                 </div>
-                <button type="submit" class="submit-btn" id="submitBtn">✦ Kirim Ucapan</button>
+                <button type="submit" class="submit-btn" id="submitBtn">✦ Kirim Ucapan & Doa</button>
                 <div id="form-msg"></div>
             </form>
         </div>
 
         <!-- Wish Wall -->
         <div class="wish-wall">
-            <p class="wish-wall-title">❀ Dinding Ucapan ❀</p>
+            <p class="wish-wall-title">❀ Dinding Doa & Ucapan ❀</p>
             <div class="wish-list" id="wishList">
                 <?php if (empty($wishes)): ?>
-                    <div class="no-wishes">Belum ada ucapan. Jadilah yang pertama! 🌸</div>
+                    <div class="no-wishes">Belum ada ucapan. Jadilah yang pertama memberikan doa! 🌸</div>
                 <?php else: ?>
                     <?php foreach ($wishes as $w): ?>
                     <div class="wish-card">
@@ -592,7 +712,9 @@ $wishes = array_reverse(getWishes());
     <p>Jl. Karang Tinggal No.2, Cipedes, Kec. Sukajadi, Kota Bandung</p>
     <p>Gedung SOHO PVJ</p>
     <br>
-    <p style="font-size:0.75rem; opacity:0.5;">© 2026 Apotek Parahyangan Suite. All rights reserved.</p>
+    <p style="font-size:0.75rem; opacity:0.5;">Kami berterima kasih atas kehadiran dan doa Anda. Sampai jumpa di hari istimewa kami.</p>
+    <br>
+    <p style="font-size:0.72rem; opacity:0.4;">© 2026 Apotek Parahyangan Suite. All rights reserved.</p>
 </footer>
 
 <script>
@@ -603,7 +725,7 @@ $wishes = array_reverse(getWishes());
         const now = Date.now();
         const diff = target - now;
         if (diff <= 0) {
-            document.getElementById('countdown').innerHTML = '<div style="color:var(--primary);font-family:\'Playfair Display\',serif;font-size:1.4rem;font-weight:600;">🎉 Acara Sedang Berlangsung!</div>';
+            document.getElementById('countdown').innerHTML = '<div style="color:var(--primary);font-family:\'Arena Uno\',sans-serif;font-size:1.4rem;font-weight:700;">🎉 Acara Sedang Berlangsung!</div>';
             return;
         }
         const d = Math.floor(diff / 86400000);
@@ -672,7 +794,7 @@ document.getElementById('wishForm').addEventListener('submit', async function(e)
     }
 
     btn.disabled = false;
-    btn.textContent = '✦ Kirim Ucapan';
+    btn.textContent = '✦ Kirim Ucapan & Doa';
 });
 
 function escHtml(str) {

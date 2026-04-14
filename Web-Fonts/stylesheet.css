@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Bold.eot');
+    src: url('ArenaUno-Bold.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Bold.woff2') format('woff2'),
+        url('ArenaUno-Bold.woff') format('woff'),
+        url('ArenaUno-Bold.svg#ArenaUno-Bold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-BoldItalic.eot');
+    src: url('ArenaUno-BoldItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-BoldItalic.woff2') format('woff2'),
+        url('ArenaUno-BoldItalic.woff') format('woff'),
+        url('ArenaUno-BoldItalic.svg#ArenaUno-BoldItalic') format('svg');
+    font-weight: bold;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Heavy.eot');
+    src: url('ArenaUno-Heavy.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Heavy.woff2') format('woff2'),
+        url('ArenaUno-Heavy.woff') format('woff'),
+        url('ArenaUno-Heavy.svg#ArenaUno-Heavy') format('svg');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-HeavyItalic.eot');
+    src: url('ArenaUno-HeavyItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-HeavyItalic.woff2') format('woff2'),
+        url('ArenaUno-HeavyItalic.woff') format('woff'),
+        url('ArenaUno-HeavyItalic.svg#ArenaUno-HeavyItalic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Italic.eot');
+    src: url('ArenaUno-Italic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Italic.woff2') format('woff2'),
+        url('ArenaUno-Italic.woff') format('woff'),
+        url('ArenaUno-Italic.svg#ArenaUno-Italic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Medium.eot');
+    src: url('ArenaUno-Medium.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Medium.woff2') format('woff2'),
+        url('ArenaUno-Medium.woff') format('woff'),
+        url('ArenaUno-Medium.svg#ArenaUno-Medium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-MediumItalic.eot');
+    src: url('ArenaUno-MediumItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-MediumItalic.woff2') format('woff2'),
+        url('ArenaUno-MediumItalic.woff') format('woff'),
+        url('ArenaUno-MediumItalic.svg#ArenaUno-MediumItalic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-LightItalic.eot');
+    src: url('ArenaUno-LightItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-LightItalic.woff2') format('woff2'),
+        url('ArenaUno-LightItalic.woff') format('woff'),
+        url('ArenaUno-LightItalic.svg#ArenaUno-LightItalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Light.eot');
+    src: url('ArenaUno-Light.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Light.woff2') format('woff2'),
+        url('ArenaUno-Light.woff') format('woff'),
+        url('ArenaUno-Light.svg#ArenaUno-Light') format('svg');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Thin.eot');
+    src: url('ArenaUno-Thin.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Thin.woff2') format('woff2'),
+        url('ArenaUno-Thin.woff') format('woff'),
+        url('ArenaUno-Thin.svg#ArenaUno-Thin') format('svg');
+    font-weight: 100;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-ThinItalic.eot');
+    src: url('ArenaUno-ThinItalic.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-ThinItalic.woff2') format('woff2'),
+        url('ArenaUno-ThinItalic.woff') format('woff'),
+        url('ArenaUno-ThinItalic.svg#ArenaUno-ThinItalic') format('svg');
+    font-weight: 100;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Arena Uno';
+    src: url('ArenaUno-Regular.eot');
+    src: url('ArenaUno-Regular.eot?#iefix') format('embedded-opentype'),
+        url('ArenaUno-Regular.woff2') format('woff2'),
+        url('ArenaUno-Regular.woff') format('woff'),
+        url('ArenaUno-Regular.svg#ArenaUno-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
