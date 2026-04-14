@@ -679,11 +679,12 @@ $wishes = array_reverse(getWishes());
         <p class="section-label">Tentang Acara</p>
         <h2 class="section-title">Kami Mengundang Kehadiran Anda</h2>
         <p class="about-text">
-            Dengan penuh rasa syukur, kami dengan bangga mengundang Anda untuk hadir dan merayakan bersama kami di hari yang istimewa ini.
-            Apotek Parahyangan Suite resmi hadir sebagai wujud nyata komitmen kami dalam menghadirkan layanan farmasi yang profesional, terpercaya, dan berorientasi pada kepuasan setiap pelanggan di&nbsp;Kota&nbsp;Bandung.
+            Dengan penuh rasa syukur, kami dengan bangga mengundang Anda untuk hadir dan merayakan momen istimewa bersama kami.<br><br>
+            Apotek Parahyangan Suite hadir sebagai wujud komitmen kami dalam menghadirkan pengalaman farmasi yang lebih dari sekadar layanan — sebuah perpaduan antara Care, Beauty, dan Science yang dirancang untuk mendukung kesehatan dan kepercayaan diri secara menyeluruh.<br><br>
+            Kami percaya bahwa setiap individu berhak mendapatkan pelayanan yang tidak hanya profesional dan terpercaya, tetapi juga personal, nyaman, dan berorientasi pada kualitas hidup yang lebih baik.
         </p>
         <div class="highlight-box">
-            "Kehadiran Anda adalah kehormatan bagi kami. Mari bersama-sama kita rayakan langkah awal menuju pelayanan kesehatan yang lebih&nbsp;baik."
+            Kehadiran Anda adalah kehormatan bagi kami. Mari bersama-sama merayakan langkah awal menuju pengalaman kesehatan dan kecantikan yang lebih terintegrasi, personal, dan bermakna.
         </div>
     </div>
 </section>
