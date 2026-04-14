@@ -261,6 +261,57 @@ $wishes = array_reverse(getWishes());
         /* ── WISH FORM ── */
         .wish-section { background: #fff; }
 
+        /* ── RSVP ── */
+        .rsvp-section { background: var(--primary-pale); }
+
+        .rsvp-form {
+            background: #fff;
+            border: 1px solid rgba(166,71,134,0.2);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow: 0 8px 32px rgba(166,71,134,0.08);
+            max-width: 560px;
+            margin: 0 auto;
+        }
+
+        .rsvp-options {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .rsvp-option input[type=radio] { display: none; }
+
+        .rsvp-option label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 20px 12px;
+            border: 2px solid rgba(166,71,134,0.2);
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .rsvp-option label .opt-icon { font-size: 1.8rem; }
+
+        .rsvp-option input[type=radio]:checked + label {
+            border-color: var(--primary);
+            background: var(--primary-pale);
+            color: var(--primary);
+            box-shadow: 0 4px 16px rgba(166,71,134,0.18);
+        }
+
+        .guests-field { display: none; }
+        .guests-field.visible { display: block; }
+
         .wish-form {
             background: linear-gradient(135deg, #fdf4fa, #f5e0f0);
             border: 1px solid rgba(166,71,134,0.25);
@@ -543,6 +594,7 @@ $wishes = array_reverse(getWishes());
         /* ── RESPONSIVE ── */
         @media (max-width: 600px) {
             .wish-form { padding: 28px 20px; }
+            .rsvp-form { padding: 28px 20px; }
             .info-card { min-width: 140px; padding: 16px 18px; }
             .hero-ribbon-corner { width: 90px; }
             .hero-ribbon-corner-left { width: 70px; }
@@ -651,6 +703,57 @@ $wishes = array_reverse(getWishes());
                 Jl. Karang Tinggal No.2, Cipedes, Kec. Sukajadi,<br>
                 Kota Bandung – Gedung SOHO PVJ</p>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Ribbon separator -->
+<div class="section-ribbon-sep">
+    <img src="pita.png" alt="" aria-hidden="true">
+</div>
+
+<!-- RSVP -->
+<section class="rsvp-section" id="rsvp">
+    <div class="container">
+        <p class="section-label">Konfirmasi Kehadiran</p>
+        <h2 class="section-title">Apakah Anda Akan Hadir?</h2>
+
+        <div class="rsvp-form">
+            <form id="rsvpForm">
+                <div class="form-group">
+                    <label for="rsvp-name">Nama Lengkap</label>
+                    <input type="text" id="rsvp-name" name="name" placeholder="Masukkan nama Anda..." maxlength="100" required>
+                </div>
+                <div class="form-group">
+                    <label for="rsvp-phone">No. HP / WhatsApp <span style="font-weight:300;opacity:0.6;">(opsional)</span></label>
+                    <input type="tel" id="rsvp-phone" name="phone" placeholder="Contoh: 08123456789" maxlength="20">
+                </div>
+                <div class="form-group">
+                    <label>Konfirmasi Kehadiran</label>
+                    <div class="rsvp-options">
+                        <div class="rsvp-option">
+                            <input type="radio" id="rsvp-hadir" name="attendance" value="hadir" required>
+                            <label for="rsvp-hadir">
+                                <span class="opt-icon">🎉</span>
+                                Ya, saya akan hadir
+                            </label>
+                        </div>
+                        <div class="rsvp-option">
+                            <input type="radio" id="rsvp-tidak" name="attendance" value="tidak">
+                            <label for="rsvp-tidak">
+                                <span class="opt-icon">🙏</span>
+                                Maaf, tidak bisa hadir
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group guests-field" id="guestsField">
+                    <label for="rsvp-guests">Jumlah Tamu yang Dibawa</label>
+                    <input type="number" id="rsvp-guests" name="guests" min="1" max="20" value="1">
+                </div>
+                <button type="submit" class="submit-btn" id="rsvpBtn">✦ Kirim Konfirmasi</button>
+                <div id="rsvp-msg"></div>
+            </form>
         </div>
     </div>
 </section>
@@ -805,6 +908,44 @@ function escHtml(str) {
 document.querySelector('.cta-btn').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('ucapan').scrollIntoView({ behavior: 'smooth' });
+});
+
+// ── RSVP Form ──
+const hadirRadio = document.getElementById('rsvp-hadir');
+const tidakRadio = document.getElementById('rsvp-tidak');
+const guestsField = document.getElementById('guestsField');
+
+[hadirRadio, tidakRadio].forEach(r => {
+    r.addEventListener('change', () => {
+        guestsField.classList.toggle('visible', hadirRadio.checked);
+    });
+});
+
+document.getElementById('rsvpForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('rsvpBtn');
+    const msg = document.getElementById('rsvp-msg');
+
+    btn.disabled = true;
+    btn.textContent = 'Mengirim...';
+    msg.textContent = '';
+    msg.className = '';
+
+    try {
+        const fd = new FormData(this);
+        const res = await fetch('rsvp.php', { method: 'POST', body: fd });
+        const data = await res.json();
+
+        msg.textContent = data.success ? '✓ ' + data.message : '⚠ ' + data.message;
+        msg.className = data.success ? 'msg-success' : 'msg-error';
+        if (data.success) this.reset();
+    } catch {
+        msg.textContent = '⚠ Terjadi kesalahan. Coba lagi.';
+        msg.className = 'msg-error';
+    }
+
+    btn.disabled = false;
+    btn.textContent = '✦ Kirim Konfirmasi';
 });
 </script>
 
