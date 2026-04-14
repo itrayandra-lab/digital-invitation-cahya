@@ -110,7 +110,8 @@ $wishes = array_reverse(getWishes());
 
         .hero-title span {
             color: var(--primary);
-            font-style: italic;
+            font-style: normal;
+            font-weight: 900;
         }
 
         .hero-subtitle {
@@ -679,10 +680,10 @@ $wishes = array_reverse(getWishes());
         <h2 class="section-title">Kami Mengundang Kehadiran Anda</h2>
         <p class="about-text">
             Dengan penuh rasa syukur, kami dengan bangga mengundang Anda untuk hadir dan merayakan bersama kami di hari yang istimewa ini.
-            Apotek Parahyangan Suite resmi hadir sebagai wujud nyata komitmen kami dalam menghadirkan layanan farmasi yang profesional, terpercaya, dan berorientasi pada kepuasan setiap pelanggan di Kota Bandung.
+            Apotek Parahyangan Suite resmi hadir sebagai wujud nyata komitmen kami dalam menghadirkan layanan farmasi yang profesional, terpercaya, dan berorientasi pada kepuasan setiap pelanggan di&nbsp;Kota&nbsp;Bandung.
         </p>
         <div class="highlight-box">
-            "Kehadiran Anda adalah kehormatan bagi kami. Mari bersama-sama kita rayakan langkah awal menuju pelayanan kesehatan yang lebih baik."
+            "Kehadiran Anda adalah kehormatan bagi kami. Mari bersama-sama kita rayakan langkah awal menuju pelayanan kesehatan yang lebih&nbsp;baik."
         </div>
     </div>
 </section>
