@@ -36,8 +36,46 @@ function setCell($sheet, $col, $row, $value) {
     $sheet->setCellValue(Coordinate::stringFromColumnIndex($col) . $row, $value);
 }
 
-if ($type === 'ucapan') {
-    $list     = array_reverse(getWishes());
+if ($type === 'tamu') {
+    $list     = array_reverse(getTamu());
+    $filename = 'Tamu-Grand-Opening.xlsx';
+    $sheet->setTitle('Tamu Terdaftar');
+
+    $sheet->mergeCells('A1:D1');
+    $sheet->setCellValue('A1', 'Data Tamu Terdaftar – Grand Opening Apotek Parahyangan Suite');
+    $sheet->getStyle('A1')->applyFromArray([
+        'font'      => ['bold' => true, 'size' => 13, 'color' => ['rgb' => 'A64786']],
+        'alignment' => ['horizontal' => Alignment::HORIZONTAL_CENTER],
+    ]);
+    $sheet->getRowDimension(1)->setRowHeight(28);
+
+    foreach (['No', 'Nama', 'No. WhatsApp', 'Waktu Daftar'] as $col => $h) {
+        setCell($sheet, $col + 1, 2, $h);
+    }
+    $sheet->getStyle('A2:D2')->applyFromArray($headerStyle);
+    $sheet->getRowDimension(2)->setRowHeight(22);
+
+    foreach ($list as $i => $t) {
+        $row = $i + 3;
+        setCell($sheet, 1, $row, $i + 1);
+        setCell($sheet, 2, $row, $t['name']);
+        setCell($sheet, 3, $row, $t['phone']);
+        setCell($sheet, 4, $row, $t['time']);
+        $sheet->getStyle("A{$row}:D{$row}")->applyFromArray($rowStyle);
+        if ($i % 2 === 1) {
+            $sheet->getStyle("A{$row}:D{$row}")->applyFromArray([
+                'fill' => ['fillType' => Fill::FILL_SOLID, 'startColor' => ['rgb' => 'FDF4FA']],
+            ]);
+        }
+        $sheet->getRowDimension($row)->setRowHeight(20);
+    }
+
+    $sheet->getColumnDimension('A')->setWidth(6);
+    $sheet->getColumnDimension('B')->setWidth(30);
+    $sheet->getColumnDimension('C')->setWidth(22);
+    $sheet->getColumnDimension('D')->setWidth(22);
+
+} elseif ($type === 'ucapan') {    $list     = array_reverse(getWishes());
     $filename = 'Ucapan-Grand-Opening.xlsx';
     $sheet->setTitle('Ucapan & Doa');
 

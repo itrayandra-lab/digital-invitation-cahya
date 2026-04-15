@@ -19,8 +19,9 @@ if (isset($_GET['logout'])) {
 }
 
 $isAdmin = !empty($_SESSION['admin']);
-$rsvpList  = $isAdmin ? getRsvp() : [];
+$rsvpList   = $isAdmin ? getRsvp() : [];
 $wishesList = $isAdmin ? array_reverse(getWishes()) : [];
+$tamuList   = $isAdmin ? array_reverse(getTamu()) : [];
 
 $totalHadir  = count(array_filter($rsvpList, fn($r) => $r['attendance'] === 'hadir'));
 $totalTidak  = count(array_filter($rsvpList, fn($r) => $r['attendance'] === 'tidak'));
@@ -379,12 +380,17 @@ $totalTamu   = array_sum(array_column(array_filter($rsvpList, fn($r) => $r['atte
             <div class="stat-num"><?= count($wishesList) ?></div>
             <div class="stat-label">Total Ucapan</div>
         </div>
+        <div class="stat-card">
+            <div class="stat-num"><?= count($tamuList) ?></div>
+            <div class="stat-label">Tamu Terdaftar</div>
+        </div>
     </div>
 
     <!-- Tabs -->
     <div class="tabs">
         <button class="tab-btn active" onclick="switchTab('kehadiran', this)">🎟 Kehadiran (<?= count($rsvpList) ?>)</button>
         <button class="tab-btn" onclick="switchTab('ucapan', this)">💌 Ucapan (<?= count($wishesList) ?>)</button>
+        <button class="tab-btn" onclick="switchTab('tamu', this)">👤 Tamu (<?= count($tamuList) ?>)</button>
     </div>
 
     <!-- Tab: Kehadiran -->
@@ -460,6 +466,42 @@ $totalTamu   = array_sum(array_column(array_filter($rsvpList, fn($r) => $r['atte
                             <td><?= $w['name'] ?></td>
                             <td class="wish-msg-cell">"<?= $w['message'] ?>"</td>
                             <td><?= $w['time'] ?></td>
+                        </tr>
+                        <?php endforeach; ?>
+                    </tbody>
+                </table>
+                <?php endif; ?>
+            </div>
+        </div>
+    </div>
+
+    <!-- Tab: Tamu Terdaftar -->
+    <div class="tab-panel" id="tab-tamu">
+        <div class="table-wrap">
+            <div class="table-header">
+                <h2>Daftar Tamu Terdaftar</h2>
+                <a href="export.php?type=tamu" class="export-btn">⬇ Export Excel</a>
+            </div>
+            <div class="table-scroll">
+                <?php if (empty($tamuList)): ?>
+                    <div class="empty-state">Belum ada tamu yang mendaftar.</div>
+                <?php else: ?>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Nama</th>
+                            <th>No. WhatsApp</th>
+                            <th>Waktu Daftar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($tamuList as $i => $t): ?>
+                        <tr>
+                            <td><?= $i + 1 ?></td>
+                            <td><?= $t['name'] ?></td>
+                            <td><?= $t['phone'] ?></td>
+                            <td><?= $t['time'] ?></td>
                         </tr>
                         <?php endforeach; ?>
                     </tbody>

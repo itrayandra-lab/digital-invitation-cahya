@@ -936,12 +936,15 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
     try {
         const fd = new FormData(this);
         const res = await fetch('rsvp.php', { method: 'POST', body: fd });
-        const data = await res.json();
+        const text = await res.text();
+        let data;
+        try { data = JSON.parse(text); }
+        catch { data = { success: false, message: 'Server error. Coba lagi.' }; }
 
         msg.textContent = data.success ? '✓ ' + data.message : '⚠ ' + data.message;
         msg.className = data.success ? 'msg-success' : 'msg-error';
         if (data.success) this.reset();
-    } catch {
+    } catch(err) {
         msg.textContent = '⚠ Terjadi kesalahan. Coba lagi.';
         msg.className = 'msg-error';
     }
