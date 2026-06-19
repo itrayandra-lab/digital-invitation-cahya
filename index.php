@@ -1174,20 +1174,30 @@ function asset(string $path): string
         .contact-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 12px;
+            gap: 16px;
+            max-width: 640px;
+            margin-inline: auto;
         }
 
         .contact-card {
-            padding: 18px 20px;
+            padding: 22px 24px;
             border-radius: 18px;
             background: rgba(255,255,255,0.84);
             border: 1px solid rgba(70,61,50,0.08);
             box-shadow: 0 10px 20px rgba(52,43,35,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .contact-card__info {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
         }
 
         .contact-card strong {
             display: block;
-            margin-bottom: 6px;
             color: var(--ink);
             font-size: 1rem;
         }
@@ -1197,6 +1207,11 @@ function asset(string $path): string
             font-size: 0.9rem;
             line-height: 1.65;
             font-weight: 300;
+        }
+
+        .contact-card__btn {
+            width: 100%;
+            text-align: center;
         }
 
         .contact-actions {
@@ -1489,10 +1504,6 @@ function asset(string $path): string
                 width: 100%;
             }
 
-            .contact-actions .btn {
-                width: 100%;
-            }
-
             .section {
                 padding: 68px 0;
             }
@@ -1534,6 +1545,10 @@ function asset(string $path): string
 
             .contact-actions {
                 gap: 8px;
+            }
+
+            .contact-grid {
+                max-width: 100%;
             }
 
             .support-band,
@@ -1870,18 +1885,19 @@ function asset(string $path): string
 
                 <div class="contact-grid">
                     <article class="contact-card reveal">
-                        <strong>Gesti</strong>
-                        <span>+62 821-6971-6742</span>
+                        <div class="contact-card__info">
+                            <strong>Gesti</strong>
+                            <span>+62 821-6971-6742</span>
+                        </div>
+                        <a class="btn btn-primary contact-card__btn" href="https://wa.me/6282169716742" target="_blank" rel="noopener">WhatsApp Gesti</a>
                     </article>
                     <article class="contact-card reveal delay-1">
-                        <strong>Ulfi</strong>
-                        <span>+62 895-2592-3084</span>
+                        <div class="contact-card__info">
+                            <strong>Ulfi</strong>
+                            <span>+62 895-2592-3084</span>
+                        </div>
+                        <a class="btn btn-secondary contact-card__btn" href="https://wa.me/6289525923084" target="_blank" rel="noopener">WhatsApp Ulfi</a>
                     </article>
-                </div>
-
-                <div class="contact-actions">
-                    <a class="btn btn-primary" href="https://wa.me/6282169716742" target="_blank" rel="noopener">WhatsApp Gesti</a>
-                    <a class="btn btn-secondary" href="https://wa.me/6289525923084" target="_blank" rel="noopener">WhatsApp Ulfi</a>
                 </div>
             </div>
         </div>

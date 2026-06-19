@@ -2,7 +2,7 @@
 define('WISHES_FILE', __DIR__ . '/wishes.json');
 define('RSVP_FILE',   __DIR__ . '/rsvp.json');
 define('TAMU_FILE',   __DIR__ . '/tamu.json');
-define('ADMIN_PASSWORD', 'apotek2026'); // ganti sesuai kebutuhan
+define('ADMIN_PASSWORD', 'rayandra'); // ganti sesuai kebutuhan
 
 function getWishes() {
     if (!file_exists(WISHES_FILE)) return [];
