@@ -1407,6 +1407,80 @@ function asset(string $path): string
         .delay-2 { transition-delay: 240ms; }
         .delay-3 { transition-delay: 360ms; }
 
+        .cover {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .cover-left,
+        .cover-right {
+            flex: 0 0 50%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            transition: transform 1.2s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+
+        .cover-left {
+            background-image: url('<?= asset('assets/d-kiri.png') ?>');
+        }
+
+        .cover-right {
+            background-image: url('<?= asset('assets/d-kanan.png') ?>');
+        }
+
+        .cover.open .cover-left {
+            transform: translateX(-100%);
+        }
+
+        .cover.open .cover-right {
+            transform: translateX(100%);
+        }
+
+        .cover-btn {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10000;
+            padding: 18px 40px;
+            border: 2px solid rgba(255,255,255,0.4);
+            border-radius: 50px;
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(8px);
+            color: #3d6b52;
+            font-family: 'Alegreya Sans', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: opacity 0.6s ease, transform 0.3s ease;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+            text-transform: uppercase;
+        }
+
+        .cover-btn:hover {
+            transform: translate(-50%, -50%) scale(1.05);
+            background: rgba(255,255,255,0.2);
+            border-color: rgba(255,255,255,0.6);
+        }
+
+        .cover-btn.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        body.cover-open {
+            overflow: auto;
+        }
+
+        body:not(.cover-open) {
+            overflow: hidden;
+        }
+
         @media (max-width: 960px) {
             .hero-card {
                 grid-template-columns: 1fr;
@@ -1450,6 +1524,14 @@ function asset(string $path): string
         }
 
         @media (max-width: 640px) {
+            .cover-left {
+                background-position: right;
+            }
+
+            .cover-right {
+                background-position: left;
+            }
+
             .container {
                 width: min(100% - 20px, 1160px);
             }
@@ -1590,6 +1672,11 @@ function asset(string $path): string
     </style>
 </head>
 <body>
+<div class="cover" id="cover">
+    <div class="cover-left"></div>
+    <div class="cover-right"></div>
+</div>
+<button class="cover-btn" id="coverBtn">Open Invitation</button>
 <div class="shell">
     <header class="hero">
         <div class="container">
@@ -1603,8 +1690,7 @@ function asset(string $path): string
                     </div>
 
                     <p class="hero-copy">
-                        Dengan penuh rasa syukur, kami mengundang Anda untuk hadir dalam sebuah perayaan
-                        perjalanan hidup, karya, dan pembelajaran yang bermakna. Sebuah momen hangat
+                        Dengan penuh rasa syukur, kami mengundang Bapak/Ibu untuk hadir dalam majelis syukur atas nikmat, rahmat, dan perjalanan kehidupan yang Allah anugerahkan. Sebuah momen hangat
                         untuk berbagi kisah, refleksi, dan keindahan dalam kebersamaan.
                     </p>
 
@@ -1621,7 +1707,7 @@ function asset(string $path): string
                     <div class="hero-frame">
                         <div class="hero-pin" aria-hidden="true"></div>
                         <div class="hero-stamp" aria-hidden="true"></div>
-                        <img src="<?= asset('assets/foto-digital-invitation.png') ?>?v=2" alt="Cahya Khairani">
+                        <img src="<?= asset('assets/cahya.webp') ?>?v=2" alt="Cahya Khairani">
                     </div>
                 </div>
             </article>
@@ -1928,6 +2014,17 @@ function asset(string $path): string
 
 <script>
     document.addEventListener('DOMContentLoaded', () => {
+        const cover = document.getElementById('cover');
+        const btn = document.getElementById('coverBtn');
+
+        if (cover && btn) {
+            btn.addEventListener('click', () => {
+                cover.classList.add('open');
+                btn.classList.add('hidden');
+                document.body.classList.add('cover-open');
+            });
+        }
+
         const observeTargets = document.querySelectorAll('.reveal');
         const observer = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
