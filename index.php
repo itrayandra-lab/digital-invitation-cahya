@@ -1352,9 +1352,8 @@ function asset(string $path): string
         }
 
         .footer-logos {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 16px 22px;
+            display: flex;
+            justify-content: center;
             align-items: center;
             margin: 22px auto 0;
             max-width: 860px;
@@ -1365,27 +1364,16 @@ function asset(string $path): string
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 44px;
             padding: 0 8px;
         }
 
-        .footer-logo:last-child {
-            grid-column: 1 / -1;
-            min-height: 56px;
-        }
-
         .footer-logo img {
-            max-height: 36px;
+            max-height: 120px;
             width: auto;
             max-width: 100%;
             object-fit: contain;
             filter: brightness(0) invert(1);
             opacity: 0.88;
-        }
-
-        .footer-logo:last-child img {
-            max-height: 60px;
-            width: min(100%, 760px);
         }
 
         .footer-copy {
@@ -1514,12 +1502,7 @@ function asset(string $path): string
             }
 
             .footer-logos {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
                 max-width: 460px;
-            }
-
-            .footer-logo:last-child {
-                grid-column: 1 / -1;
             }
         }
 
@@ -1641,11 +1624,6 @@ function asset(string $path): string
 
             .detail-row {
                 grid-template-columns: 1fr;
-            }
-
-            .footer-logos {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
             }
 
             .separator img {
@@ -1808,10 +1786,9 @@ function asset(string $path): string
                     <div class="section-card-head">
                         <span class="eyebrow">Arah Lokasi</span>
                     </div>
-                    <h3>Datang dengan tenang, kami siapkan sambutan yang hangat.</h3>
+                    <h3>Kami nantikan kehadiran Bapak/Ibu dengan penuh sukacita.</h3>
                     <p class="body-copy">
-                        Area ini dirancang agar terasa nyaman, lembut, dan mudah dinikmati sejak tiba.
-                        Silakan datang tepat waktu agar Anda dapat merasakan alur acara dengan lebih utuh.
+                        Kami sertakan detail lokasi dan petunjuk Google Maps agar Bapak/Ibu dapat menuju tempat acara dengan dengan lebih mudah.
                     </p>
 
                     <ul class="info-list">
@@ -1841,20 +1818,19 @@ function asset(string $path): string
 
     <section class="section section--sage" id="rsvp">
         <div class="container">
-            <p class="section-kicker">Reservasi Kehadiran</p>
+            <p class="section-kicker">KONFIRMASI</p>
             <h2 class="section-title">Apakah Anda Akan Hadir?</h2>
             <div class="split-grid rsvp-split">
                 <article class="card card-pad reveal rsvp-intro">
                     <div class="section-card-head">
-                        <span class="eyebrow">Reservasi</span>
+                        <span class="eyebrow">Konfirmasi</span>
                     </div>
-                    <h3 class="big-lead">Mohon lakukan reservasi agar kami dapat menyiapkan pengalaman terbaik bagi setiap tamu.</h3>
+                    <h3 class="big-lead">Mohon lakukan konfirmasi kehadiran agar kami dapat menyiapkan pengalaman terbaik bagi setiap tamu.</h3>
                     <p class="body-copy">
-                        Form ini dibuat sederhana supaya Anda bisa konfirmasi kehadiran dengan cepat dan nyaman.
-                        Kami sangat menghargai kabar dari Anda.
+                        Form ini dibuat sederhana supaya Anda bisa konfirmasi kehadiran dengan cepat dan nyaman. Kami sangat menghargai kabar dari Anda.
                     </p>
                     <div class="mini-card" style="margin-top:16px;background:rgba(180,188,164,0.10);">
-                        <span class="mini-label">Kenapa reservasi?</span>
+                        <span class="mini-label">KENAPA KONFIRMASI HADIR?</span>
                         <div class="mini-value">Agar kami bisa menyiapkan alur acara, kenyamanan tamu, dan kebutuhan tempat dengan lebih baik.</div>
                     </div>
                 </article>
@@ -1963,10 +1939,10 @@ function asset(string $path): string
     <section class="section section--sage contact-section support-band">
         <div class="container">
             <div class="contact-strip">
-                <p class="section-kicker">Bantuan Reservasi</p>
-                <h2 class="section-title" style="margin-bottom:8px;">Butuh Bantuan Reservasi?</h2>
+                <p class="section-kicker">KONFIRMASI KEHADIRAN</p>
+                <h2 class="section-title" style="margin-bottom:8px;">Butuh Bantuan Konfirmasi Kehadiran?</h2>
                 <p class="section-copy" style="max-width:700px;">
-                    Untuk konfirmasi atau bantuan reservasi, silakan hubungi WhatsApp di bawah ini.
+                    Jika Anda mengalami kendala atau ingin mengonfirmasi kehadiran, silakan hubungi kami melalui WhatsApp di bawah ini.
                 </p>
 
                 <div class="contact-grid">
@@ -2001,10 +1977,7 @@ function asset(string $path): string
             <p class="footer-copy" style="font-size:0.75rem; opacity:0.68;">Terima kasih telah menjadi bagian dari perjalanan penuh makna ini.</p>
 
             <div class="footer-logos" aria-hidden="true">
-                <div class="footer-logo"><img src="<?= asset('assets/logo/mommy logo.png') ?>" alt=""></div>
-                <div class="footer-logo"><img src="<?= asset('assets/logo/baby logo.png') ?>" alt=""></div>
-                <div class="footer-logo"><img src="<?= asset('assets/logo/dermond logo.png') ?>" alt=""></div>
-                <div class="footer-logo"><img src="<?= asset('assets/logo/another logo.png') ?>" alt=""></div>
+                <div class="footer-logo"><img src="<?= asset('assets/logo/all-logo.png') ?>" alt=""></div>
             </div>
 
             <p style="font-size:0.72rem; opacity:0.48; margin-top:18px;">&copy; 2026 All rights reserved.</p>
