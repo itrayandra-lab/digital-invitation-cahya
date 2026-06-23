@@ -1428,6 +1428,10 @@ function asset(string $path): string
             transform: translateX(100%);
         }
 
+        .cover.open {
+            pointer-events: none;
+        }
+
         .cover-btn {
             position: fixed;
             top: 50%;
@@ -1673,7 +1677,7 @@ function asset(string $path): string
                     </p>
 
                     <div class="hero-actions">
-                        <a class="btn btn-primary" href="#rsvp">Reservasi Kehadiran</a>
+                        <a class="btn btn-primary" href="#rsvp">Konfirmasi Kehadiran</a>
                         <a class="btn btn-secondary" href="#wishes">Titipkan Ucapan</a>
                     </div>
 
@@ -1874,7 +1878,7 @@ function asset(string $path): string
                             <input type="number" id="rsvp-guests" name="guests" min="1" max="20" value="1">
                         </div>
 
-                        <button type="submit" class="btn btn-primary" id="rsvpBtn">Kirim Reservasi</button>
+                        <button type="submit" class="btn btn-primary" id="rsvpBtn">Kirim Konfirmasi</button>
                         <div id="rsvp-msg" class="message" role="status" aria-live="polite"></div>
                     </form>
                 </article>
@@ -2129,7 +2133,7 @@ function asset(string $path): string
             }
 
             btn.disabled = false;
-            btn.textContent = 'Kirim Reservasi';
+            btn.textContent = 'Kirim Konfirmasi';
         });
     }
 </script>
